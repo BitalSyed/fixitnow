@@ -1,0 +1,597 @@
+* {
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  background-color: white;
+  width: 8px;
+  box-shadow: inset 0px 0px 5px black;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #f06922;
+}
+
+.img {
+  width: 15rem;
+  position: absolute;
+  margin-top: -3rem;
+}
+
+#navbar button {
+  position: absolute;
+  margin-top: 1.4rem;
+  margin-right: -70rem;
+  color: white;
+  background-color: #f06922;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  font-size: 20px;
+  padding: 12px 18px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+#navbar button:hover {
+  background-color: #000;
+
+}
+
+#navbar ul {
+  display: flex;
+  justify-content: center;
+
+}
+
+#navbar ul li {
+  list-style: none;
+  margin: 2rem;
+}
+
+#navbar ul li {
+  font-size: x-large;
+}
+
+#navbar ul li:hover {
+  color: #f06922;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+}
+
+#navbar ul li::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0%;
+  background-color: #f06922;
+  transition: all 0.4s ease-in-out;
+}
+
+#navbar ul li:hover::after {
+  width: 100%;
+}
+
+#sec1 {
+  display: flex;
+  justify-content: space-around;
+  /* margin: 2rem; */
+}
+
+#sec1 div img {
+  width: 21rem;
+}
+
+/* css of signup button on the first section of home page */
+#signup {
+  margin-top: 3rem;
+  color: white;
+  background-color: #f06922;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  font-size: 20px;
+  padding: 8px 18px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+}
+
+#signup:hover {
+  background-color: #000;
+}
+
+/* popup banners for signup coding 
+ */
+
+#popup {
+  background-color: #1e1e1e;
+  opacity: 0.9;
+  display: none;
+  width: 40vw;
+  flex-direction: column;
+  padding: 2rem;
+  justify-content: center;
+  border-radius: 20px;
+  box-shadow: 0px 0px 12px #1e1e1e;
+}
+#popup p {
+  font-family: "Pacifico", cursive;
+  color: white;
+  margin-top: 5px;
+  margin-bottom: 1.4rem;
+  font-size: 2.3rem;
+  font-weight: bold;
+}
+
+/* popup of the login function on index page  */
+#popuplog {
+  background-color: #1e1e1e;
+  opacity: 0.9;
+  display: none;
+  width: 40vw;
+  flex-direction: column;
+  padding: 2rem;
+  justify-content: center;
+  border-radius: 20px;
+  box-shadow: 0px 0px 12px #1e1e1e;
+}
+#popuplog p {
+  font-family: "Pacifico", cursive;
+  color: white;
+  margin-top: 5px;
+  margin-bottom: 1.4rem;
+  font-size: 2.3rem;
+  font-weight: bold;
+}
+
+
+
+.acc {
+  margin: 0.7rem;
+  color: white;
+  background-color: #f06922;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  font-size: 20px;
+  padding: 8px 18px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.acc:hover {
+  background-color: #000;
+}
+
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  border: 2px solid #333;
+  border-radius: 10px;
+  z-index: 9999;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+}
+
+
+/* particles gand bala */
+
+
+
+#sec2 {
+  padding: 2rem 0px 2rem 0px;
+  background-color: #252627;
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+#sec2 div img {
+  width: 21rem;
+}
+
+#sec2 div mark {
+  color: white;
+  background-color: transparent;
+}
+
+/* learn more button in section no 2 */
+#learnmore {
+  margin-top: 3rem;
+  color: white;
+  background-color: #f06922;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  font-size: 15px;
+  padding: 8px 10px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+#learnmore:hover {
+  background-color: #000;
+}
+
+#sec3 {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5rem;
+}
+
+#sec3 div {
+
+  margin-top: 3rem;
+}
+
+#sec3 div mark {
+  background-color: transparent;
+  color: white;
+}
+
+#sec3 div img {
+  width: 25rem;
+}
+
+.s3 {
+  padding: 2rem;
+}
+
+#playbutton {
+  cursor: pointer;
+  animation: breathing 0.5s ease-out infinite;
+}
+
+@keyframes breathing {
+  0% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  25% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  60% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  100% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
+/* contact form section  */
+#form-1 {
+  background-color: #1e1e1e;
+  margin-top: 9rem;
+
+}
+
+
+.formsec2 {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  width: 65vw;
+  margin: auto;
+}
+
+.formsec2 h1 {
+  margin-top: 3rem;
+  color: white;
+  text-align: start;
+
+}
+
+.formsec2 p {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+  text-align: start;
+}
+
+.f1 {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-start; */
+
+}
+
+.f1 input {
+  background-color: transparent;
+  /* width: 16rem; */
+  width: 33%;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 4px;
+  color: white;
+  margin: 4px;
+
+}
+
+.f2 {
+  /* width: 51.8rem; */
+  display: flex;
+  justify-content: flex-start;
+}
+
+.f2 textarea {
+  border: 1px solid white;
+  width: 100%;
+  color: white;
+  background-color: transparent;
+  border-radius: 4px;
+  height: 5rem;
+  margin: 4px;
+  padding-left: 6px;
+  /* transition: all 0.2s linear; */
+
+}
+
+.formsec2 div {
+  display: flex;
+  justify-content: flex-start;
+  margin: 4px 0px 0px 3px;
+  min-width: 40rem;
+  width: 90%;
+}
+
+.formsec2 button {
+  background-color: #f06922;
+  color: white;
+  padding: 2px;
+  height: 2rem;
+  width: 20rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 1s ease-in-out;
+}
+
+.formsec2 button:hover {
+  background-color: black;
+}
+
+/* footer styling starts from here */
+#last-sec {
+  height: 100%;
+  background-color: #1e1e1e;
+  overflow: hidden;
+}
+
+#footer {
+  height: 100%;
+  width: 75vw;
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 21px 1px;
+}
+
+#footer>div:first-of-type {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 27px 1px;
+}
+
+#footer p {
+  color: white;
+  margin-top: 1.5rem;
+  font-size: large;
+}
+
+.last-contacts {
+  display: flex;
+  /* height: 100%; */
+  margin: 40px 1px;
+  /* cursor: pointer; */
+}
+
+.last-contacts div {
+  color: white;
+  margin: 0.9rem 2rem 0rem;
+  display: flex;
+  align-items: center;
+}
+
+.last-contacts ion-icon {
+  font-size: 4rem;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+
+}
+
+.last-contacts ion-icon:hover {
+  background-color: #f06922;
+  border-radius: 100%;
+}
+
+
+.rights {
+  color: white;
+  font-size: 15px;
+  text-align: end;
+}
+
+/* styling of the cards start from here  */
+.cards {
+  display: flex;
+  flex-direction: column;
+}
+
+.cards>div {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.cards div div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 16rem;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 2rem;
+
+}
+
+.cardh4 {
+  margin: 20px;
+  color: black;
+  font-family: "PT Sans Narrow", sans-serif;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.h1 {
+  color: #f06922;
+  font-family: "PT Sans Narrow", sans-serif;
+}
+
+.carddiv {
+  /* background-image: url(./img/logo.png); */
+  background-size: 17rem;
+  background-repeat: no-repeat;
+  /* background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)), url(./img/logo.png); */
+  /* background-size: cover; */
+  background-color: white;
+}
+
+/* book now button 
+ */
+.booknow {
+  color: white;
+  background-color: #f06922;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  font-size: 15px;
+  padding: 8px 10px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.booknow:hover {
+  background-color: #000;
+}
+
+
+
+
+/* client signup page transitions*/
+/* background animation js.module content  */
+
+
+#particles-js {
+  background: black;
+  position: fixed;
+  /* height: 100vh; */
+  width: 100%;
+  /* overflow: hidden; */
+}
+
+/* signup professional
+ */
+
+ .signup-form {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.signup-form h2 {
+  margin-bottom: 20px;
+}
+
+.signup-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.signup-form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.suggestions-box {
+  border: 1px solid #ccc;
+  border-top: none;
+  max-height: 100px;
+  overflow-y: auto;
+  position: absolute;
+  width: calc(100% - 22px);
+  background: white;
+  z-index: 1000;
+}
+
+.suggestions-box div {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.suggestions-box div:hover {
+  background: #f0f0f0;
+}
+
+
+/* choices js coding */
+/* choices js coding */
+/* choices js coding */
+/* choices js coding */
+/* choices js coding */
+/* choices js coding */
+/* choices js coding */
+/* choices js coding */
+/* choices js coding */
+/* choices js coding */
+/* choices js coding */
+/* choices js coding*/
+
+.choices__inner{
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.choices__list--multiple .choices__item{
+  border-color: #f06922 !important;
+  background-color: #f06922 !important;
+}
+
+/* clients dashboard */
+/* clients dashboard */
+/* clients dashboard */
+/* clients dashboard */
+/* clients dashboard */
+/* clients dashboard */
+

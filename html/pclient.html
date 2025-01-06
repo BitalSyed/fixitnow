@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Dashboard</title>
+    <link rel="stylesheet" href="/style/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    .navbar ul {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .navbar ul li {
+        color: black;
+        list-style: none;
+        /* padding: 5px; */
+        font-size: x-large;
+    }
+
+    .search-container {
+        display: flex;
+        margin-top: 4rem;
+        justify-content: center;
+
+    }
+
+    #search-input {
+        padding: 8px;
+        width: 25rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+  
+
+    #search-results {
+        margin-top: 20px;
+    }
+
+    .profilecontainer {
+        border: 2px solid black;
+        /* display: flex; */
+        width: 55rem;
+        margin: auto;
+        padding: 1rem;
+    }
+
+    .profilecontainer img {
+        border-radius: 100%;
+        width: 5rem;
+
+    }
+
+    .pc1 {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 12px;
+        padding-right: 12px;
+        margin-bottom: 12px;
+    }
+
+    .pc2 {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 12px;
+    }
+
+    #service-options {
+        display: none;
+        margin-top: 10px;
+    }
+
+    h2 {
+        text-align: center;
+        margin: 2rem;
+    }
+
+    #search-bar {
+        width: 60%;
+        padding: 1rem;
+        border-radius: 5px;
+        border: 2px solid #f06922;
+        text-align: center;
+        /* display: block; */
+        /* margin: auto; */
+        margin-bottom: 3rem;
+    }
+
+    #service-options {
+        display: none;
+        margin-top: 10px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        max-height: 200px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        z-index: 1000;
+    }
+
+    #search {
+        background-color: #f06922;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        margin: 1rem;
+        margin-top: 0;
+        margin-bottom: 3rem;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    #search:hover {
+        background-color: #d85a1c;
+        transform: scale(1.05);
+    }
+
+    #search:active {
+        background-color: #b14c19;
+        transform: scale(0.98);
+    }
+
+    #search:focus {
+        outline: none;
+        box-shadow: 0 0 10px rgba(240, 105, 34, 0.5);
+    }
+    .services{
+        display: flex;
+        justify-content: center;
+    }
+    /* #datasection{
+        border: 2px solid black;
+        padding: 1rem;
+    } */
+</style>
+
+<body>
+<!-- navbar  -->
+<!-- navbar  -->
+<!-- navbar  -->
+<!-- navbar  -->
+<!-- navbar  -->
+<!-- navbar  -->
+<!-- navbar  -->
+<!-- navbar  -->
+<!-- navbar  -->
+<!-- navbar  -->
+<!-- navbar  -->
+<!-- navbar  -->
+<!-- navbar  -->
+<!-- navbar  -->
+<!-- navbar  -->
+<!-- navbar  -->
+<!-- navbar  -->
+<!-- navbar  -->
+
+
+
+<header class="text-gray-600 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <img src="/img/logo11.png" alt="" style="width: 11rem; cursor: pointer; " onclick="window.location='/'">
+            <span class="ml-3 text-xl"></span>
+        </a>
+        <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:text-gray-900" style="cursor: pointer;" onclick="window.location='/'">Home</a>
+            <a class="mr-5 hover:text-gray-900" style="cursor: pointer;" id="working">Working?</a>
+            <a class="mr-5 hover:text-gray-900" style="cursor: pointer;" id="aboutus">About Us</a>
+            <a class="mr-5 hover:text-gray-900" style="cursor: pointer;" id="contactus">Contact Us</a>
+        </nav>
+</div>
+</header>
+
+    <section class="text-gray-600 body-font">
+        <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+            <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" style="border-radius: 100% !important;" alt="hero"
+            src="https://www.w3.org/assets/website-2021/svg/avatar.svg">
+            <div class="text-center lg:w-2/3 w-full">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900" id="cname">Your Name</h1>
+                <p class="mb-8 leading-relaxed" id="caddress">Address</p>
+                <input type="hidden" name="email" id="cmail">
+                <div class="flex justify-center">
+                    <button
+                        class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" onclick="eraseCookie('auth')">Logout</button>
+                    
+                            <button onclick="window.location=`/pclient2/?email=${cmail.value}`"
+                        class="ml-4 inline-flex text-black-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-200 rounded text-lg"><ion-icon name="reorder-three-outline"></ion-icon></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- area for search-bar -->
+    <!-- area for search-bar -->
+    <!-- area for search-bar -->
+    <!-- area for search-bar -->
+    <!-- area for search-bar -->
+    <!-- area for search-bar -->
+    
+    
+    <h2 style="font-size: 2rem; margin-bottom: 1rem; font-weight: bold; font-family: cursive;">Search for Repair
+        Services</h2>
+        <div class="services">
+            <input type="text" id="search-bar" placeholder="Search for a service..." onkeyup="filterOptions()">
+            <button id="search" type="button"  onclick="search()">Search</button>
+        </div>
+
+
+
+
+        <!-- services list  -->
+        <select id="service-options" size="10" onclick="selectClickedOption(event)">
+            <option value="plumber">Plumber</option>
+            <option value="electrician">Electrician</option>
+            <option value="car-mechanic">Car Mechanic</option>
+            <option value="bike-mechanic">Bike Mechanic</option>
+            <option value="mobile-repair">Mobile Repair</option>
+            <option value="computer-repair">Computer Repair</option>
+            <option value="tv-repair">TV Repair</option>
+            <option value="washing-machine-repair">Washing Machine Repair</option>
+            <option value="refrigerator-repair">Refrigerator Repair</option>
+            <option value="ac-repair">AC Repair</option>
+            <option value="microwave-repair">Microwave Repair</option>
+            <option value="water-heater-repair">Water Heater Repair</option>
+            <option value="printer-repair">Printer Repair</option>
+            <option value="camera-repair">Camera Repair</option>
+            <option value="fan-repair">Fan Repair</option>
+            <option value="geyser-repair">Geyser Repair</option>
+            <option value="home-theater-repair">Home Theater Repair</option>
+            <option value="laptop-repair">Laptop Repair</option>
+            <option value="tablet-repair">Tablet Repair</option>
+            <option value="sewing-machine-repair">Sewing Machine Repair</option>
+            <option value="drain-cleaning">Drain Cleaning</option>
+            <option value="roof-repair">Roof Repair</option>
+            <option value="floor-repair">Floor Repair</option>
+            <option value="furniture-repair">Furniture Repair</option>
+            <option value="door-lock-repair">Door Lock Repair</option>
+            <option value="window-repair">Window Repair</option>
+            <option value="curtain-installation">Curtain Installation</option>
+            <option value="glass-repair">Glass Repair</option>
+            <option value="carpentry-services">Carpentry Services</option>
+            <option value="painting-services">Painting Services</option>
+            <option value="pest-control">Pest Control</option>
+            <option value="garden-maintenance">Garden Maintenance</option>
+            <option value="pool-maintenance">Pool Maintenance</option>
+            <option value="water-purifier-repair">Water Purifier Repair</option>
+            <option value="solar-panel-repair">Solar Panel Repair</option>
+            <option value="elevator-repair">Elevator Repair</option>
+            <option value="garage-door-repair">Garage Door Repair</option>
+            <option value="chimney-repair">Chimney Repair</option>
+            <option value="ceiling-fan-installation">Ceiling Fan Installation</option>
+            <option value="smart-home-installation">Smart Home Installation</option>
+            <option value="security-system-repair">Security System Repair</option>
+            <option value="battery-backup-repair">Battery Backup Repair</option>
+            <option value="fire-alarm-repair">Fire Alarm Repair</option>
+            <option value="cctv-installation">CCTV Installation</option>
+            <option value="water-leak-repair">Water Leak Repair</option>
+            <option value="gas-pipeline-repair">Gas Pipeline Repair</option>
+            <option value="blinds-repair">Blinds Repair</option>
+            <option value="dryer-repair">Dryer Repair</option>
+            <option value="electric-gate-repair">Electric Gate Repair</option>
+            <option value="ups-repair">UPS Repair</option>
+            <option value="inverter-installation">Inverter Installation</option>
+            <option value="generator-repair">Generator Repair</option>
+            <option value="solar-water-heater-installation">Solar Water Heater Installation</option>
+            <option value="mosquito-net-installation">Mosquito Net Installation</option>
+            <option value="water-tank-cleaning">Water Tank Cleaning</option>
+            <option value="sofa-cleaning">Sofa Cleaning</option>
+            <option value="water-pump-repair">Water Pump Repair</option>
+            <option value="motorcycle-tuning">Motorcycle Tuning</option>
+            <option value="gas-stove-repair">Gas Stove Repair</option>
+            <option value="electric-iron-repair">Electric Iron Repair</option>
+            <option value="fan-installation">Fan Installation</option>
+            <option value="geyser-installation">Geyser Installation</option>
+            <option value="wardrobe-assembly">Wardrobe Assembly</option>
+            <option value="handyman-services">Handyman Services</option>
+            <option value="electric-panel-installation">Electric Panel Installation</option>
+            <option value="cable-wiring">Cable Wiring</option>
+            <option value="internet-setup-repair">Internet Setup & Repair</option>
+            <option value="cctv-maintenance">CCTV Maintenance</option>
+            <option value="satellite-dish-installation">Satellite Dish Installation</option>
+            <option value="air-cooler-repair">Air Cooler Repair</option>
+            <option value="water-dispenser-repair">Water Dispenser Repair</option>
+            <option value="room-heater-repair">Room Heater Repair</option>
+            <option value="home-automation-services">Home Automation Services</option>
+            <option value="sound-system-installation">Sound System Installation</option>
+            <option value="tile-installation">Tile Installation</option>
+            <option value="plumbing-services">Plumbing Services</option>
+            <option value="lighting-installation">Lighting Installation</option>
+            <option value="electrical-troubleshooting">Electrical Troubleshooting</option>
+            <option value="borewell-repair">Borewell Repair</option>
+            <option value="solar-street-light-installation">Solar Street Light Installation</option>
+            <option value="mobile-software-installation">Mobile Software Installation</option>
+            <option value="it-network-setup">IT Network Setup</option>
+            <option value="smartphone-screen-replacement">Smartphone Screen Replacement</option>
+            <option value="laptop-battery-replacement">Laptop Battery Replacement</option>
+            <option value="home-cleaning-services">Home Cleaning Services</option>
+            <option value="car-detailing">Car Detailing</option>
+            <option value="bike-repair">Bike Repair</option>
+            <option value="waterproofing-services">Waterproofing Services</option>
+            <option value="building-maintenance">Building Maintenance</option>
+            <option value="paver-block-installation">Paver Block Installation</option>
+            <option value="gate-fabrication">Gate Fabrication</option>
+            <option value="fence-installation">Fence Installation</option>
+            <option value="railing-installation">Railing Installation</option>
+            <option value="interior-design-consultation">Interior Design Consultation</option>
+            <option value="wallpaper-installation">Wallpaper Installation</option>
+            <option value="paint-touch-ups">Paint Touch-Ups</option>
+            <option value="security-guard-services">Security Guard Services</option>
+            <option value="lawn-mowing">Lawn Mowing</option>
+            <option value="pabx-system-installation">PABX System Installation</option>
+
+        </select>
+
+
+
+
+
+
+
+    <!--     
+    
+        <div class="profilecontainer" style="margin-top: 2rem; display: flex; align-items: center;">
+            <div>
+                <img src="/img/Hexagonal-Fox-Head-Technology-Logo-min-_1_.ico" alt="">
+            </div>
+            <div style="width: 100%;">
+                <div class="pc1">
+                    <h2 class="name">Name</h2>
+                    <button class="buknow">Book Now</button>
+                </div>
+                <div class="pc2">
+                    <p class="tags">Doctor teacher laywer</p>
+                    <div class="review">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="search-results">
+            
+        </div>
+     -->
+
+     <section id="datasection" class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="-my-8 divide-y-2 divide-gray-100">
+            <div class="py-8 flex flex-wrap md:flex-nowrap">
+              <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+                <!-- <span class="font-semibold title-font text-gray-700">Name</span> -->
+                <!-- <span class="mt-1 text-gray-500 text-sm">Phone number</span> -->
+              </div>
+              <div class="md:flex-grow">
+                <!-- <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">Email</h2> -->
+                <!-- <p class="leading-relaxed">Services</p> -->
+                <!-- <a class="text-indigo-500 inline-flex items-center mt-4">Send Request -->
+                  <!-- <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"> -->
+                    <path d="M5 12h14"></path>
+                    <path d="M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+      <footer class="text-gray-400 bg-gray-900 body-font">
+        <div
+            class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+            <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+                <a class="flex title-font font-medium items-center md:justify-start justify-center text-white">
+                    <img src="/img/Handyman Services and Home Repair Logo2.png" alt="">
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg> -->
+                    <span class="ml-3 text-xl"></span>
+                </a>
+                <!-- <p class="mt-2 text-sm text-gray-500">Making Life Easier</p> -->
+            </div>
+            <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">Navigation</h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a class="text-gray-400 hover:text-white">Home</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-white">Working?</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-white">About Us</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-white">Signup</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">Features</h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a class="text-gray-400 hover:text-white">Professional Dashboard</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-white">Client Dashboard</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-white">Signup</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-white">Login</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">Signup/login</h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a class="text-gray-400 hover:text-white">Signup as Professional</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-white">Signup as User</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-white">Login as Professionl</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-white">login as User</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">Customer Support</h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a class="text-gray-400 hover:text-white">FAQ's</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-white">Service Coverage</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-white">Plans</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-white">Contact Us</a>
+                        </li>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="bg-gray-800 bg-opacity-75">
+            <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+                <p class="text-gray-400 text-sm text-center sm:text-left">© 2024 SkillRex-Tech —
+                    <a href="https://skillrextech.com" rel="noopener noreferrer"
+                        class="text-gray-500 ml-1" target="_blank">@skillrextech</a>
+                </p>
+                <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+                    <a class="text-gray-400">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            class="w-5 h-5" viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-gray-400">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            class="w-5 h-5" viewBox="0 0 24 24">
+                            <path
+                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-gray-400">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-gray-400">
+                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                            <path stroke="none"
+                                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
+                            </path>
+                            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                        </svg>
+                    </a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+<!-- 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/script.js"></script> -->
+    <script src="/js/script.js"></script>
+
+    <script>
+        function filterOptions() {
+            const searchInput = document.getElementById('search-bar').value.toLowerCase();
+            const options = document.getElementById('service-options').options;
+            const selectBox = document.getElementById('service-options');
+
+            if (searchInput) {
+                selectBox.style.display = "block";
+            } else {
+                selectBox.style.display = "none";
+            }
+
+            let found = false;
+            for (let i = 0; i < options.length; i++) {
+                const optionText = options[i].text.toLowerCase();
+                if (optionText.includes(searchInput)) {
+                    options[i].style.display = "";
+                    found = true;
+                } else {
+                    options[i].style.display = "none";
+                }
+            }
+
+            if (!found) {
+                selectBox.style.display = "none";
+            }
+        }
+
+        function selectClickedOption(event) {
+            const selectedOption = event.target;
+            if (selectedOption.tagName === 'OPTION') {
+                document.getElementById('search-bar').value = selectedOption.text;
+                document.getElementById('service-options').style.display = "none";
+            }
+        }
+
+        function selectOption(event) {
+            const selectBox = document.getElementById('service-options');
+            const options = selectBox.options;
+            if (event.key === "Enter" && selectBox.style.display !== "none") {
+                for (let i = 0; i < options.length; i++) {
+                    if (options[i].style.display !== "none") {
+                        document.getElementById('search-bar').value = options[i].text;
+                        selectBox.style.display = "none";
+                        break;
+                    }
+                }
+            }
+        }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./../js/pclient.js"></script>
+
+</body>
+
+</html>
+

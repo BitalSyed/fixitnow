@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        .background {
+            background-image: url('/img/Handyman\ Services\ and\ Home\ Repair\ Logo.png');
+            background-size: cover;
+            background-position: center;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-container {
+            background-color: rgba(30, 30, 30, 0.8);
+            padding: 40px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .login-container h2 {
+            color: #f06922;
+            margin-bottom: 20px;
+        }
+
+        .login-container input[type="email"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .login-container input[type="email"] {
+            background-color: #f5f5f5;
+        }
+
+        .login-container input[type="password"] {
+            background-color: #f5f5f5;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f06922;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .login-container button:hover {
+            background-color: #d8581d;
+        }
+
+        @media (max-width: 600px) {
+            .login-container {
+                padding: 20px;
+            }
+
+            .login-container h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+        <div class="login-container">
+            <h2 id="h2">Login</h2>
+            <form action="/login" method="post" id="form">
+                <input id="email" type="email" name="email" placeholder="Email" required>
+                <input id="pass" type="password" name="password" placeholder="Password" required>
+                <button type="button" onclick="handleLogin()">Login</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        // Fetch data using the tokenlet data = new URLSearchParams();
+        // Function to handle the login process
+        function setCookie(name, value, days = 7, path = '/') {
+            let expires = '';
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = `expires=${date.toUTCString()};`;
+            }
+            document.cookie = `${name}=${value}; ${expires}path=${path}; Secure; SameSite=Strict`;
+        }
+
+        function handleLogin() {
+            // Initialize URLSearchParams object
+            let formData = new URLSearchParams();
+            formData.append('email', email.value);
+            formData.append('password', pass.value);
+
+            // Send the data to the server
+            fetch('/login', {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: formData.toString(), // Convert URLSearchParams to string
+            })
+                .then(response => response.json())
+                .then(data => {
+                    // Handle the data
+                    console.log(data);
+                    if (data.error) {
+                        form.style.display = 'none';
+                        h2.innerText = data.error;
+                    }
+                    else {
+                        setCookie('auth', data.auth, 30);
+                        form.style.display = 'none';
+                        h2.innerText = 'Login Successful';
+                        window.location='/pdash';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+
+    </script>
+</body>
+
+</html>

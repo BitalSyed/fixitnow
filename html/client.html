@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix-It-Now | Signup</title>
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/style/style.css">
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <style>
+        .particles-js {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('/img/Handyman\ Services\ and\ Home\ Repair\ Logo.png') center center/cover no-repeat fixed;
+            background-color: rgb(186, 221, 209);
+        }
+
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .client-container {
+            width: 70%;
+            display: flex;
+            justify-content: space-around;
+            background-color: rgba(0, 0, 0, 0.548);
+            position: relative;
+            padding: 40px;
+        }
+
+        .client-flex {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .client-container form {
+            overflow: hidden;
+            width: 27%;
+            opacity: 0.9;
+        }
+
+        .client-flex input {
+            background: transparent;
+            margin: 5px 0px;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid white;
+            color: white;
+            padding: 6px 2px;
+            font-size: large;
+            width: 100%;
+            transition: all 0.2s ease-in;
+
+        }
+
+        .client-flex input:focus {
+            border-bottom-color: #f06922;
+        }
+
+        .client-flex input::placeholder {
+            color: white;
+            /* font-weight: bold; */
+            font-size: large;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        }
+
+        #btncsignup:hover {
+            background-color: black !important;
+            cursor: pointer;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #1e1e1e !important;
+        }
+        .icon{
+            display: flex;
+            font-size: 2rem;
+            margin-top: 10px;
+        }
+        .icon ion-icon{
+            margin: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease-in;
+        }
+        .icon ion-icon:hover{
+            color: #f06922;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- navbar  -->
+<!-- navbar  -->
+<!-- navbar  -->
+<!-- navbar  -->
+<!-- navbar  -->
+<!-- navbar  -->
+
+
+
+<header class="text-gray-600 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <img src="/img/logo11.png" alt="" style="width: 11rem; cursor: pointer; " onclick="window.location='/'">
+            <span class="ml-3 text-xl"></span>
+        </a>
+        <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:text-gray-900" style="cursor: pointer;" onclick="window.location='/'">Home</a>
+            <a class="mr-5 hover:text-gray-900" style="cursor: pointer;" id="working">Working?</a>
+            <a class="mr-5 hover:text-gray-900" style="cursor: pointer;" id="aboutus">About Us</a>
+            <a class="mr-5 hover:text-gray-900" style="cursor: pointer;" id="contactus">Contact Us</a>
+        </nav>
+</div>
+</header>
+
+    <section class="particles-js">
+        <div class="client-container">
+            <div class="client-flex">
+                <h1 style="color: white; font-size: 2rem; font-family: 'Pacifico', cursive;">Sign-Up <br> Now <br> <mark
+                        style="background: transparent; color: white; font-size: 18px;">Repair Services, Convenience,
+                        <br>Efficiency</mark> </h1>
+                <div class="icon">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                    <ion-icon name="logo-instagram"></ion-icon>
+                    <ion-icon name="mail-outline"></ion-icon>
+                </div>
+            </div>
+            <form action="http://localhost:3000/signup" method="post" class="client-flex">
+                <input type="text" name="name" id="name" placeholder="Name" required>
+                <input type="tel" name="phone" id="phone" placeholder="Phone" required>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <input type="text" name="house" id="house" placeholder="House" required>
+                <input type="text" name="street" id="street" placeholder="Street" required>
+                <input type="text" name="sector" id="sector" placeholder="Sector/Town" required>
+                <input type="text" name="city" id="city" placeholder="City" required>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" required>
+                <button type="submit" id="btncsignup"
+                    style="background-color: #f06922; padding: 10px; color: white; font-size: larger; border: none; margin-top: 3rem; border-radius: 2px; transition: all 0.3s ease-in-out;">Sign-Up</button>
+            </form>
+            
+        </div>
+    </section>
+    <footer class="text-gray-400 bg-gray-900 body-font">
+        <div
+            class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+            <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+                <a class="flex title-font font-medium items-center md:justify-start justify-center text-white">
+                    <img src="/img/Handyman Services and Home Repair Logo2.png" alt="">
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg> -->
+                    <span class="ml-3 text-xl"></span>
+                </a>
+                <!-- <p class="mt-2 text-sm text-gray-500">Making Life Easier</p> -->
+            </div>
+            <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">Navigation</h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a class="text-gray-400 hover:text-white">Home</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-white">Working?</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-white">About Us</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-white">Signup</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">Features</h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a class="text-gray-400 hover:text-white">Professional Dashboard</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-white">Client Dashboard</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-white">Signup</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-white">Login</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">Signup/login</h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a class="text-gray-400 hover:text-white">Signup as Professional</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-white">Signup as User</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-white">Login as Professionl</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-white">login as User</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">Customer Support</h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a class="text-gray-400 hover:text-white">FAQ's</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-white">Service Coverage</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-white">Plans</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-white">Contact Us</a>
+                        </li>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="bg-gray-800 bg-opacity-75">
+            <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+                <p class="text-gray-400 text-sm text-center sm:text-left">© 2024 SkillRex-Tech —
+                    <a href="https://skillrextech.com" rel="noopener noreferrer"
+                        class="text-gray-500 ml-1" target="_blank">@skillrextech</a>
+                </p>
+                <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+                    <a class="text-gray-400">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            class="w-5 h-5" viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-gray-400">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            class="w-5 h-5" viewBox="0 0 24 24">
+                            <path
+                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-gray-400">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-gray-400">
+                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                            <path stroke="none"
+                                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
+                            </path>
+                            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                        </svg>
+                    </a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

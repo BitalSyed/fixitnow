@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-Star Rating Review</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5;
+}
+
+.rating-dialog {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.stars {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.stars span {
+    color: #ccc;
+}
+
+.stars span.selected {
+    color: #f5c518;
+}
+
+    </style>
+</head>
+<body>
+    <div class="rating-dialog">
+        <h2>Rate This Product</h2>
+        <div class="stars">
+            <span data-value="1">&#9733;</span>
+            <span data-value="2">&#9733;</span>
+            <span data-value="3">&#9733;</span>
+            <span data-value="4">&#9733;</span>
+            <span data-value="5">&#9733;</span>
+        </div>
+        <p>Rating: <span id="rating-value">0</span></p>
+        <button onclick="submitRating()">Submit</button>
+    </div>
+    <script>
+        const stars = document.querySelectorAll('.stars span');
+const ratingValue = document.getElementById('rating-value');
+let rating = 0;
+
+stars.forEach(star => {
+    star.addEventListener('click', () => {
+        rating = parseInt(star.getAttribute('data-value'));
+        updateStars();
+    });
+});
+
+function updateStars() {
+    stars.forEach(star => {
+        if (parseInt(star.getAttribute('data-value')) <= rating) {
+            star.classList.add('selected');
+        } else {
+            star.classList.remove('selected');
+        }
+    });
+    ratingValue.textContent = rating.toFixed(1);
+}
+
+function submitRating() {
+    alert(`Rating submitted: ${rating.toFixed(1)}`);
+}
+
+    </script>
+</body>
+</html>
