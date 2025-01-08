@@ -1,3 +1,14 @@
+//speech function
+function textToSpeech(text) {
+    const speech = new SpeechSynthesisUtterance(text);
+    speech.voice = window.speechSynthesis.getVoices()[0];
+    speech.pitch = 1
+    speech.rate = 1
+    window.speechSynthesis.speak(speech)
+}
+
+
+
 // Fetch count data
 function count() {
     fetch("/count")
